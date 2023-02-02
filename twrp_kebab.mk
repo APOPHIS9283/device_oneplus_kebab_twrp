@@ -19,5 +19,5 @@ $(call inherit-product, device/oneplus/kebab/device.mk)
 PRODUCT_DEVICE := kebab
 PRODUCT_NAME := twrp_kebab
 PRODUCT_BRAND := oneplus
-PRODUCT_MODEL := KB2005
+PRODUCT_MODEL := KB2003
 PRODUCT_MANUFACTURER := oneplus

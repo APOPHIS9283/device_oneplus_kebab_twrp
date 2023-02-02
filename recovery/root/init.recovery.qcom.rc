@@ -49,7 +49,6 @@ service make-fake-partitions-service /system/bin/make-fake-partitions-service.sh
 
 
 on init
-    start systemcheck
     write /sys/class/backlight/panel0-backlight/brightness 200
     start boot-hal-1-1
     setprop sys.usb.config adb
@@ -80,13 +79,3 @@ on fs
     # Set fscklog permission
     chown root system /dev/fscklogs/log
     chmod 0770 /dev/fscklogs/log
-
-on property:twrp.super.symlinks_created=true
-    start systemcheck
-
-service systemcheck /system/bin/systemcheck.sh
-    user root
-    group root
-    disabled
-    oneshot
-    seclabel u:r:recovery:s0
